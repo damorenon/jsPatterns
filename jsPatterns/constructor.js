@@ -15,15 +15,15 @@ newObject.someKey = "Hello World"; // Set properties
 var value = newObject.someKey; // Get properties
  
 // -- 2. Square bracket syntax
-newObject["someKey"] = "Hello World"; // Set properties
-var value = newObject["someKey"]; // Get properties
+newObject["someKey2"] = "Hello World"; // Set properties
+var value = newObject["someKey2"]; // Get properties
  
 // ----- ECMAScript 5 only compatible approaches
 // For more information see: http://kangax.github.com/es5-compat-table/
  
 // -- 3. Object.defineProperty
 // Set properties
-Object.defineProperty( newObject, "someKey", {
+Object.defineProperty( newObject, "someKey3", {
     value: "for more control of the property's behavior",
     writable: true,
     enumerable: true,
@@ -33,7 +33,7 @@ Object.defineProperty( newObject, "someKey", {
 // -- 4. Object.defineProperties
 // Set properties
 Object.defineProperties( newObject, {
-  "someKey": {
+  "someKey4": {
     value: "Hello World",
     writable: true
   },
@@ -66,4 +66,48 @@ Object.defineProperty( driver, "topSpeed", {
 });
 console.log( driver.dateOfBirth ); // Get an inherited property (1981)
 console.log( driver.topSpeed ); // Get the property we set (100mph)
+
+//-----------------------------------------------------------------------------------
+
+
+// *** Basic contructors:
+//"this" references the new object that's being created.
+function Car( model, year, miles ) {
+  this.model = model;
+  this.year = year;
+  this.miles = miles;
+  this.toString = function () {
+    return this.model + " has done " + this.miles + " miles";
+  };
+}
+// Usage:
+// We can create new instances of the car
+var civic = new Car( "Honda Civic", 2009, 20000 );
+var mondeo = new Car( "Ford Mondeo", 2010, 5000 );
+// and then open our browser console to view the output of the toString() method being called on these objects
+console.log( civic.toString() );
+console.log( mondeo.toString() );
+
+//The above is a simple version of the constructor pattern but it does suffer from some problems
+
+//-----------------------------------------------------------------------------------
+
+
+//Constructors with prototypes:
+function Car2( model, year, miles ) {
+  this.model = model;
+  this.year = year;
+  this.miles = miles;
+}
+// Note here that we are using Object.prototype.newMethod rather than Object.prototype so as to avoid redefining the prototype object
+Car2.prototype.toString = function () {
+  return this.model + " has done " + this.miles + " miles";
+};
+// Usage:
+var civic = new Car2( "Honda Civic", 2009, 20000 );
+var mondeo = new Car2( "Ford Mondeo", 2010, 5000 );
+console.log( civic.toString() );
+console.log( mondeo.toString() );
+
+//Above, a single instance of toString() will now be shared between all of the Car objects.
 

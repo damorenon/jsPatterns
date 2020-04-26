@@ -1,13 +1,12 @@
 /*
 -The GoF refer to the prototype pattern as one which creates objects based on a template of an existing object through cloning.
--We can think of the prototype pattern as being based on prototypal inheritance where we create objects which act as prototypes for other objects.
--One of the benefits of using the prototype pattern is that we're working with the prototypal strengths JavaScript has to offer natively 
-rather than attempting to imitate features of other languages.
-*/
+-We can think of the prototype pattern as being based on prototypal inheritance where we create objects which act as prototypes 
+for other objects.
+-One of the benefits of using the prototype pattern is that we're working with the prototypal strengths JavaScript has to offer 
+natively rather than attempting to imitate features of other languages.
 
-/*
-Object.create allows us to easily implement advanced concepts such as differential inheritance where objects are able to directly inherit from 
-other objects. 
+Object.create allows us to easily implement advanced concepts such as differential inheritance where objects are able to directly 
+inherit from other objects. 
 */
 
 var myCar = {
@@ -48,8 +47,8 @@ var car = Object.create(vehicle, {
 
 //-----------------------------------------------------------------------------------
 /*
-If we wish to implement the prototype pattern without directly using Object.create, we can simulate the pattern as per the above example as follows:
-(This alternative does not allow the user to define read-only properties in the same manner)
+If we wish to implement the prototype pattern without directly using Object.create, we can simulate the pattern as per the above 
+example as follows: (This alternative does not allow the user to define read-only properties in the same manner)
 */
 var vehiclePrototype = {
   init: function ( carModel ) {

@@ -1,15 +1,18 @@
 /*
-Mixins are classes which offer functionality that can be easily inherited by a sub-class or group of sub-classes for the purpose of function re-use.
+Mixins are classes which offer functionality that can be easily inherited by a sub-class or group of sub-classes 
+for the purpose of function re-use.
 
-Sub-classing is a term that refers to inheriting properties for a new object from a base or superclass object. In traditional object-oriented 
-programming, a class B is able to extend another class A. Here we consider A a superclass and B a subclass of A. As such, all instances of B 
-inherit the methods from A. B is however still able to define its own methods, including those that override methods originally defined by A.
+Sub-classing is a term that refers to inheriting properties for a new object from a base or superclass object. 
+In traditional object-oriented programming, a class B is able to extend another class A. Here we consider A a 
+superclass and B a subclass of A. As such, all instances of B inherit the methods from A. B is however still 
+able to define its own methods, including those that override methods originally defined by A.
 Should B need to invoke a method in A that has been overridden, we refer to this as method chaining. 
 Should B need to invoke the constructor A (the superclass), we call this constructor chaining.
 
-In JavaScript, we can look at inheriting from Mixins as a means of collecting functionality through extension. Each new object we define has a 
-prototype from which it can inherit further properties. Prototypes can inherit from other object prototypes but, even more importantly, 
-can define properties for any number of object instances. We can leverage this fact to promote function re-use.
+In JavaScript, we can look at inheriting from Mixins as a means of collecting functionality through extension. 
+Each new object we define has a prototype from which it can inherit further properties. Prototypes can inherit 
+from other object prototypes but, even more importantly, can define properties for any number of object instances. 
+We can leverage this fact to promote function re-use.
 */
 
 var myMixins = {

@@ -37,8 +37,9 @@ bindReady: function() {
 
 //-----------------------------------------------------------------------------------
 /*
-Facades can also be integrated with other patterns such as the Module pattern. As we can see below, our instance of the module patterns contains 
-a number of methods which have been privately defined. A Facade is then used to supply a much simpler API to accessing these methods:
+Facades can also be integrated with other patterns such as the Module pattern. As we can see below, our instance 
+of the module patterns contains a number of methods which have been privately defined. A Facade is then used to 
+supply a much simpler API to accessing these methods:
 */
 var module = (function() {
     var _private = {
@@ -71,7 +72,8 @@ module.facade({run: true, val: 10});
 
 
 /*
-Facades generally have few disadvantages, but one concern worth noting is performance. Namely, one must determine whether there is an implicit 
-cost to the abstraction a Facade offers to our implementation and if so, whether this cost is justifiable.
-When using the pattern, try to be aware of any performance costs involved and make a call on whether they are worth the level of abstraction offered.
+Facades generally have few disadvantages, but one concern worth noting is performance. Namely, one must determine whether there 
+is an implicit cost to the abstraction a Facade offers to our implementation and if so, whether this cost is justifiable.
+When using the pattern, try to be aware of any performance costs involved and make a call on whether they are worth the level 
+of abstraction offered.
 */

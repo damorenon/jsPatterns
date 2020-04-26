@@ -1,14 +1,17 @@
 /*
-If it appears a system has too many direct relationships between components, it may be time to have a central point of control that components 
-communicate through instead. The Mediator promotes loose coupling by ensuring that instead of components referring to each other explicitly, 
-their interaction is handled through this central point. This can help us decouple systems and improve the potential for component reusability.
+If it appears a system has too many direct relationships between components, it may be time to have a central point 
+of control that components communicate through instead. The Mediator promotes loose coupling by ensuring that instead 
+of components referring to each other explicitly, their interaction is handled through this central point. This can 
+help us decouple systems and improve the potential for component reusability.
 
-A real-world analogy could be a typical airport traffic control system. A tower (Mediator) handles what planes can take off and land because all 
-communications (notifications being listened out for or broadcast) are done from the planes to the control tower, rather than from plane-to-plane. 
-A centralized controller is key to the success of this system and that's really the role a Mediator plays in software design.
+A real-world analogy could be a typical airport traffic control system. A tower (Mediator) handles what planes can 
+take off and land because all communications (notifications being listened out for or broadcast) are done from the 
+planes to the control tower, rather than from plane-to-plane. A centralized controller is key to the success of this 
+system and that's really the role a Mediator plays in software design.
 
-When it comes to the Mediator and Event Aggregator patterns (Publish/subscriber), there are some times where it may look like the patterns are 
-interchangeable due to implementation similarities. However, the semantics and intent of these patterns are very different.
+When it comes to the Mediator and Event Aggregator patterns (Publish/subscriber), there are some times where it may 
+look like the patterns are interchangeable due to implementation similarities. However, the semantics and intent of 
+these patterns are very different.
 */
 
 //A Mediator is an object that coordinates interactions (logic and behavior) between multiple objects. 

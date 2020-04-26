@@ -67,10 +67,13 @@ function Observer(){
   };
 }
 
-//---- HTML: 
-<button id="addNewObserver">Add New Observer checkbox</button> //A button for adding new observable checkboxes to the page
-<input id="mainCheckbox" type="checkbox"/> //A control checkbox which will act as a subject, notifying other checkboxes they should be checked
-<div id="observersContainer"></div> //A container for the new checkboxes being added
+//---- HTML:
+//A button for adding new observable checkboxes to the page
+<button id="addNewObserver">Add New Observer checkbox</button> 
+//A control checkbox which will act as a subject, notifying other checkboxes they should be checked
+<input id="mainCheckbox" type="checkbox"/> 
+//A container for the new checkboxes being added
+<div id="observersContainer"></div> 
 
 // ---- Extend an object with an extension
 function extend( obj, extension ){

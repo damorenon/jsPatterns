@@ -72,8 +72,10 @@ however unlikely. The above example should otherwise still be valid.
 */
 //-----------------------------------------------------------------------------------
 
-
-//When the sole instance should be extensible by subclassing, and clients should be able to use an extended instance without modifying their code.
+/*
+When the sole instance should be extensible by subclassing, and clients should be able to use an extended instance 
+without modifying their code.
+*/
 mySingleton.getInstance = function(){
   if ( this._instance == null ) {
     if ( isFoo() ) {
@@ -85,8 +87,9 @@ mySingleton.getInstance = function(){
   return this._instance;
 };
 /*
-It is important to note the difference between a static instance of a class (object) and a Singleton: whilst a Singleton can be implemented
-as a static instance, it can also be constructed lazily, without the need for resources nor memory until this is actually needed.
+It is important to note the difference between a static instance of a class (object) and a Singleton: whilst a 
+Singleton can be implemented as a static instance, it can also be constructed lazily, without the need for 
+resources nor memory until this is actually needed.
 */
 
 //-----------------------------------------------------------------------------------
@@ -95,7 +98,7 @@ In practice, the Singleton pattern is useful when exactly one object is needed t
 Here is one example with the pattern being used in this context:
 */
 var SingletonTester = (function () {
-  // options: an object containing configuration options for the singleton. e.g var options = { name: "test", pointX: 5};
+  // options: an object containing configuration options for the singleton. e.g var options = {name: "test", pointX: 5};
   function Singleton( options ) {
     // set options to the options supplied or an empty object if none are provided
     options = options || {};

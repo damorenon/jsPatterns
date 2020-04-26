@@ -1,7 +1,7 @@
-
-//Classically, the Singleton pattern can be implemented by creating a class with a method that creates a new instance 
-//of the class if one doesn't exist. In the event of an instance already existing, it simply returns a reference to that object.
-
+/*
+Classically, the Singleton pattern can be implemented by creating a class with a method that creates a new instance of the 
+class if one doesn't exist. In the event of an instance already existing, it simply returns a reference to that object.
+*/
 var mySingleton = (function () {
   // Instance stores a reference to the Singleton
   var instance;
@@ -66,14 +66,14 @@ console.log( singleA.getRandomNumber() === singleB.getRandomNumber() ); // true
 var badSingleA = myBadSingleton.getInstance();
 var badSingleB = myBadSingleton.getInstance();
 console.log( badSingleA.getRandomNumber() !== badSingleB.getRandomNumber() ); // true
- 
-// Note: as we are working with random numbers, there is a mathematical possibility both numbers will be the same,
-// however unlikely. The above example should otherwise still be valid.
-
+/*
+Note: as we are working with random numbers, there is a mathematical possibility both numbers will be the same,
+however unlikely. The above example should otherwise still be valid.
+*/
 //-----------------------------------------------------------------------------------
 
 
-// When the sole instance should be extensible by subclassing, and clients should be able to use an extended instance without modifying their code.
+//When the sole instance should be extensible by subclassing, and clients should be able to use an extended instance without modifying their code.
 mySingleton.getInstance = function(){
   if ( this._instance == null ) {
     if ( isFoo() ) {
@@ -84,16 +84,16 @@ mySingleton.getInstance = function(){
   }
   return this._instance;
 };
-
-//It is important to note the difference between a static instance of a class (object) and a Singleton: whilst a Singleton can be implemented
-//as a static instance, it can also be constructed lazily, without the need for resources nor memory until this is actually needed.
+/*
+It is important to note the difference between a static instance of a class (object) and a Singleton: whilst a Singleton can be implemented
+as a static instance, it can also be constructed lazily, without the need for resources nor memory until this is actually needed.
+*/
 
 //-----------------------------------------------------------------------------------
-
-
-//In practice, the Singleton pattern is useful when exactly one object is needed to coordinate others across a system.
-// Here is one example with the pattern being used in this context:
-
+/*
+In practice, the Singleton pattern is useful when exactly one object is needed to coordinate others across a system.
+Here is one example with the pattern being used in this context:
+*/
 var SingletonTester = (function () {
   // options: an object containing configuration options for the singleton. e.g var options = { name: "test", pointX: 5};
   function Singleton( options ) {

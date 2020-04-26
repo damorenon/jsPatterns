@@ -1,7 +1,9 @@
 
-// *** Object Literal
-//Object literals don't require instantiation using the new operator but shouldn't be used at the start of a statement as the opening { may be 
-//interpreted as the beginning of a block. Outside of an object, new members may be added to it using assignment as follows myModule.property = "someValue";
+/*
+-Object literals don't require instantiation using the new operator but shouldn't be used at the start of a statement as 
+the opening { may be interpreted as the beginning of a block. Outside of an object, new members may be added to it using 
+assignment as follows myModule.property = "someValue";
+*/
 var myObjectLiteral = {
     variableKey: variableValue,
     functionKey: function () {
@@ -47,13 +49,13 @@ myModule.updateMyConfig({
 // Outputs: Caching is: disabled
 myModule.reportMyConfig();
 
-//In JavaScript, the Module pattern is used to further emulate the concept of classes in such a way that we're able to include both 
-//public/private methods and variables inside a single object, thus shielding particular parts from the global scope. What this results 
-//in is a reduction in the likelihood of our function names conflicting with other functions defined in additional scripts on the page.
-
-//The Module pattern encapsulates "privacy", state and organization using closures. This gives us a clean solution for shielding logic 
-//doing the heavy lifting whilst only exposing an interface we wish other parts of our application to use.
-
+/*
+-In JavaScript, the Module pattern is used to further emulate the concept of classes in such a way that we're able to include both 
+public/private methods and variables inside a single object, thus shielding particular parts from the global scope. What this results 
+in is a reduction in the likelihood of our function names conflicting with other functions defined in additional scripts on the page.
+-The Module pattern encapsulates "privacy", state and organization using closures. This gives us a clean solution for shielding logic 
+doing the heavy lifting whilst only exposing an interface we wish other parts of our application to use.
+*/
 
 //-----------------------------------------------------------------------------------
 
@@ -164,12 +166,13 @@ var myLibrary = library(function () {
 }());
 
 //-----------------------------------------------------------------------------------
-
+/*
 //PROS:
-// 1. Easier for developers that comes from object-oriented background
-// 2. Supports private data
+-Easier for developers that comes from object-oriented background
+-Supports private data
 
 //CONS:
-// 1. hard to change visibility
-// 2. Methods added in a later point can't access to private parts
-// 3. hart to create unit tests for private parts
+-Hard to change visibility
+-Methods added in a later point can't access to private parts
+-Hart to create unit tests for private parts
+*/

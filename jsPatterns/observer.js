@@ -10,7 +10,8 @@ Components:
 ->Subject: maintains a list of observers, facilitates adding or removing observers
 ->Observer: provides an update interface for objects that need to be notified of a Subject's changes of state
 ->ConcreteSubject: broadcasts notifications to observers on changes of state, stores the state of ConcreteObservers
-->ConcreteObserver: stores a reference to the ConcreteSubject, implements an update interface for the Observer to ensure state is consistent with the Subject's
+->ConcreteObserver: stores a reference to the ConcreteSubject, implements an update interface for the Observer to ensure 
+state is consistent with the Subject's
 */
 
 // --- The list of dependent Observers a subject may have:
@@ -125,7 +126,8 @@ var subscriber1 = subscribe( "inbox/newMessage", function( topic, data ) {
   $( ".messageSender" ).html( data.sender );
   $( ".messagePreview" ).html( data.body );
 });
-// Here's another subscriber using the same data to perform a different task. Update the counter displaying the number of new messages received via the publisher
+//Here's another subscriber using the same data to perform a different task. Update the counter displaying the number of new messages 
+//received via the publisher
 var subscriber2 = subscribe( "inbox/newMessage", function( topic, data ) {
   $('.newMessageCounter').html( ++mailCounter );
 });
@@ -134,17 +136,24 @@ publish( "inbox/newMessage", [{
   sender: "hello@google.com",
   body: "Hey there! How are you doing today?"
 }]);
-// We could then at a later point unsubscribe our subscribers from receiving any new topic notifications as follows:
+/*
+We could then at a later point unsubscribe our subscribers from receiving any new topic notifications as follows:
 // unsubscribe( subscriber1 );
 // unsubscribe( subscriber2 );
+*/
 
-//PROS:
-//Breaks down apps into smaller, more loosely coupled blocks to improve code management and potentialas for re-use
-//Maintains consistency between related objects without making classes tightly coupled
 
-//CONS:
-//By decoupling pubs from subs, it can sometimes become difficult to obtain guarantees that particular parts of our applications are functioning as we may expect.
-//Subscribers are quite ignorant to the existence of each other and are blind to the cost of switching publishers.
+//-----------------------------------------------------------------------------------
+/*
+PROS:
+-Breaks down apps into smaller, more loosely coupled blocks to improve code management and potentialas for re-use
+-Maintains consistency between related objects without making classes tightly coupled
+
+CONS:
+-By decoupling pubs from subs, it can sometimes become difficult to obtain guarantees that particular parts of our applications are 
+functioning as we may expect.
+-Subscribers are quite ignorant to the existence of each other and are blind to the cost of switching publishers.
+*/
 
 
 //-----------------------------------------------------------------------------------

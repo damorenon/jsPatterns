@@ -1,6 +1,7 @@
-
-//we would simply define all of our functions and variables in the private scope and return an anonymous object 
-//with pointers to the private functionality we wished to reveal as public.
+/*
+We would simply define all of our functions and variables in the private scope and return an anonymous object 
+with pointers to the private functionality we wished to reveal as public.
+*/
 var myRevealingModule = (function () {
     var privateVar = "Ben Cherry",
         publicVar = "Hey there!";

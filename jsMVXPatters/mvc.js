@@ -68,13 +68,13 @@ var PhotoGallery = Backbone.Collection.extend({
 
 //-----------------------------------------------------------------------------------
 /*
-A VIEW typically observes a model and is notified when the model changes, allowing the view to update itself accordingly. Design pattern 
-literature commonly refers to views as "dumb" given that their knowledge of models and controllers in an application is limited. Users are 
-able to interact with views and this includes the ability to read and edit (i.e get or set the attribute values in) models. As the view is 
-the presentation layer, we generally present the ability to edit and update in a user-friendly fashion.
+A VIEW typically observes a model and is notified when the model changes, allowing the view to update itself accordingly. Design 
+pattern literature commonly refers to views as "dumb" given that their knowledge of models and controllers in an application is 
+limited. Users are able to interact with views and this includes the ability to read and edit (i.e get or set the attribute values
+in) models. As the view is the presentation layer, we generally present the ability to edit and update in a user-friendly fashion.
 
-When users click on any elements within the view, it's not the view's responsibility to know what to do next. It relies on a controller 
-to make this decision for it.
+When users click on any elements within the view, it's not the view's responsibility to know what to do next. It relies on a 
+controller to make this decision for it.
 
 To summarize, views are a visual representation of our application data.
 */
@@ -94,7 +94,7 @@ var buildPhotoView = function ( photoModel, photoController ) {
     //The photoModel then adds our render() callback as one of its subscribers so that through the Observer pattern we can trigger 
     //the view to update when the model changes.
 	photoModel.addSubscriber( render );
-	//will delegate handling the click behavior back to the controller, passing the model information along with it in case it's needed.
+	//Delegates handling the click behavior back to the controller, passing the model info along with it in case it's needed.
 	photoEl.addEventListener( "click", function () {
     	photoController.handleEvent( "click", photoModel );
   	});
@@ -148,23 +148,23 @@ from the template specification.
 CONTROLLERS are an intermediary between models and views which are classically responsible for updating the model when the user 
 manipulates the view.
 
-Remember that the controllers fulfill one role in MVC: the facilitation of the Strategy pattern for the view. In the Strategy pattern 
-regard, the view delegates to the controller at the view's discretion. So, that's how the strategy pattern works. The view could 
-delegate handling user events to the controller when the view sees fit. The view *could* delegate handling model change events to 
-the controller if the view sees fit, but this is not the traditional role of the controller.
+Remember that the controllers fulfill one role in MVC: the facilitation of the Strategy pattern for the view. In the Strategy 
+pattern regard, the view delegates to the controller at the view's discretion. So, that's how the strategy pattern works. 
+The view could delegate handling user events to the controller when the view sees fit. The view *could* delegate handling model 
+change events to the controller if the view sees fit, but this is not the traditional role of the controller.
 
-In terms of where most JavaScript MVC frameworks detract from what is conventionally considered "MVC" however, it is with controllers. 
-The reasons for this vary, but in my honest opinion, it is that framework authors initially look at the server-side interpretation of 
-MVC, realize that it doesn't translate 1:1 on the client-side and re-interpret the C in MVC to mean something they feel makes more sense. 
-The issue with this however is that it is subjective, increases the complexity in both understanding the classical MVC pattern and of 
-course the role of controllers in modern frameworks.
+In terms of where most JavaScript MVC frameworks detract from what is conventionally considered "MVC" however, it is with 
+controllers. The reasons for this vary, but in my honest opinion, it is that framework authors initially look at the server-side 
+interpretation of MVC, realize that it doesn't translate 1:1 on the client-side and re-interpret the C in MVC to mean something 
+they feel makes more sense. The issue with this however is that it is subjective, increases the complexity in both understanding 
+the classical MVC pattern and of course the role of controllers in modern frameworks.
 
 To summarize, controllers manage the logic and coordination between models and views in an application.
 */
 
 /*
-In Spine, controllers are considered the glue for an application, adding and responding to DOM events, rendering templates and ensuring 
-that views and models are kept in sync (which makes sense in the context of what we know to be a controller).
+In Spine, controllers are considered the glue for an application, adding and responding to DOM events, rendering templates and 
+ensuring that views and models are kept in sync (which makes sense in the context of what we know to be a controller).
 */
 // Controllers in Spine are created by inheriting from Spine.Controller
 var PhotosController = Spine.Controller.sub({
@@ -197,11 +197,12 @@ developers working on the user-interfaces to work simultaneously
 
 The GoF do not refer to MVC as a design pattern, but rather consider it a set of classes to build a user interface. In their view, 
 it's actually a variation of three classical design patterns: the Observer, Strategy and Composite patterns. Depending on how MVC 
-has been implemented in a framework, it may also use the Factory and Template patterns. The GoF book mentions these patterns as useful 
-extras when working with MVC.
+has been implemented in a framework, it may also use the Factory and Template patterns. The GoF book mentions these patterns as 
+useful extras when working with MVC.
 
-As we have discussed, models represent application data whilst views are what the user is presented on screen. As such, MVC relies on 
-the Observer pattern for some of its core communication (something that surprisingly isn't covered in many articles about the MVC pattern).
-When a model is changed it notifies its observers (Views) that something has been updated - this is perhaps the most important relationship 
-in MVC. The observer nature of this relationship is also what facilitates multiple views being attached to the same model.
+As we have discussed, models represent application data whilst views are what the user is presented on screen. As such, MVC relies 
+on the Observer pattern for some of its core communication (something that surprisingly isn't covered in many articles about the 
+MVC pattern). When a model is changed it notifies its observers (Views) that something has been updated - this is perhaps the most 
+important relationship in MVC. The observer nature of this relationship is also what facilitates multiple views being attached to 
+the same model.
 */
